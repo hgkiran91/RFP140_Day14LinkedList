@@ -2,5 +2,26 @@ package com.bridgelabz.datastructures;
 
 public class LinkedList<T> {
 
-    // Let's create a simple Linked List of 56, 30 and 70.
+    Node<T> head;
+    Node<T> tail;
+
+
+    public void push(T data) {
+        Node<T> newNode = new Node<>(data);
+        if(head==null) {
+            head = newNode;
+            tail = newNode;
+        }else{
+            newNode.next=head;
+            head=newNode;
+        }
+    }
+
+    public void print() {
+        Node<T> temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+    }
 }
