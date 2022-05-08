@@ -8,12 +8,23 @@ public class LinkedList<T> {
 
     public void push(T data) {
         Node<T> newNode = new Node<>(data);
-        if(head==null) {
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        }else{
-            newNode.next=head;
-            head=newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+
+    public void add(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
         }
     }
 
@@ -24,4 +35,5 @@ public class LinkedList<T> {
             temp = temp.next;
         }
     }
+
 }
