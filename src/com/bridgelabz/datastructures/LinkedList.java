@@ -42,4 +42,13 @@ public class LinkedList<T> {
         }
     }
 
+    public T pop() {
+        Node<T> popElement = head;
+        T element = popElement.data;
+        Node<T> nextEle = popElement.next;
+        popElement.data = null;
+        popElement.next = null;
+        head = nextEle;
+        return element;
+    }
 }
