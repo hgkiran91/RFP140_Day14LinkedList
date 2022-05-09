@@ -28,6 +28,12 @@ public class LinkedList<T> {
         }
     }
 
+    public void insertBetween(T insertData) {
+        Node<T> newNode = new Node<>(insertData);
+        head.next = newNode;
+        newNode.next = tail;
+    }
+
     public void print() {
         Node<T> temp = head;
         while (temp != null) {
